@@ -11,6 +11,13 @@
       "font_class": "search",
       "unicode": "e8ef",
       "unicode_decimal": 59631
+    },
+    {
+      "icon_id": "8106272",
+      "name": "next",
+      "font_class": "next",
+      "unicode": "e6a2",
+      "unicode_decimal": 59042
     }
   ]
 }
