@@ -78,3 +78,65 @@ for(let i = 0;i<lis.length;i++){
         changeImg;
     });
 }
+
+// 楼层====================================
+let elevator = document.querySelector(".elevator");
+let header = document.querySelector(".header");
+let banner = document.querySelector(".banner");
+let miaosha =document.querySelector(".miaosha");//秒杀
+let youxuan = document.querySelector(".youxuan");//优选
+let guangchang = document.querySelector(".guangchang");//广场
+let tuijian = document.querySelector(".tuijian");//推荐
+let headerHeight = header.offsetHeight;
+let bannerHeight = banner.offsetHeight;
+let miaoshaTop = headerHeight+bannerHeight+30;
+let youxuanTop = miaoshaTop+miaosha.offsetHeight+20;
+let guangchangTop = youxuanTop+youxuan.offsetHeight+20;
+let tuijianTop = guangchangTop+guangchang.offsetHeight+20;
+
+let Tops = [miaoshaTop,youxuanTop,guangchangTop,tuijianTop];
+
+let elevators = document.querySelectorAll(".elevator a")
+function changeColor(change){
+    
+    for(let i = 0;i<elevators.length;i++){
+        if(i == change){
+            elevators[i].classList.add("elevator_a_font_color");
+        }else{
+            elevators[i].classList.remove("elevator_a_font_color");
+        }
+    }
+}
+for(let i = 0;i<elevators.length;i++){
+    elevators[i].addEventListener("click",()=>{
+        document.documentElement.scrollTop = Tops[i];
+        changeColor(i);
+    })
+}
+
+document.onscroll = function(){
+    let now = document.documentElement.scrollTop;
+    console.log(now);
+    if(now>=miaoshaTop){
+        elevator.classList.add("elevator-fix");
+    }else{
+        elevator.classList.remove("elevator-fix");
+    }
+
+    if(now>=tuijianTop){
+        changeColor(3);
+        return;
+    }
+    if(now>=guangchangTop){
+        changeColor(2);
+        return;
+    }
+    if(now>=youxuanTop){
+        changeColor(1);
+        return;
+    }
+    if(now>=miaoshaTop){
+        changeColor(0);
+        return
+    }
+}
