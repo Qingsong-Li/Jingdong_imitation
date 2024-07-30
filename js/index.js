@@ -87,6 +87,10 @@ let miaosha =document.querySelector(".miaosha");//秒杀
 let youxuan = document.querySelector(".youxuan");//优选
 let guangchang = document.querySelector(".guangchang");//广场
 let tuijian = document.querySelector(".tuijian");//推荐
+let search =document.querySelector(".search");
+let searchM = document.querySelector(".search-m");
+let form = document.querySelector(".form");
+let logo = document.querySelector(".search-logo");
 let headerHeight = header.offsetHeight;
 let bannerHeight = banner.offsetHeight;
 let miaoshaTop = headerHeight+bannerHeight+30;
@@ -119,8 +123,16 @@ document.onscroll = function(){
     console.log(now);
     if(now>=miaoshaTop){
         elevator.classList.add("elevator-fix");
+        search.classList.add("search-fix");
+        searchM.style.height = "50px";
+        logo.style.display = "block"
+        form.style.top = "8px";
     }else{
         elevator.classList.remove("elevator-fix");
+        search.classList.remove("search-fix");
+        searchM.style.height = "60px";
+        logo.style.display = "none"
+        form.style.top = "25px";
     }
 
     if(now>=tuijianTop){

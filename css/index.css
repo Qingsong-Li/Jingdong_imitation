@@ -43,7 +43,8 @@
 .search-m{
     position: relative;
     height: 100%;
-    width: 100%;
+    width: 1190px;
+    margin: 0 auto;
 }
 
 .search-logo{
@@ -53,6 +54,9 @@
     top: 4px;
     width: 125px;
     height: 40px;
+    background: url("../images/sprite.png") no-repeat ;
+    background-size: cover;
+    background-position: 0 -20px;
 }
 
 .form{
@@ -119,6 +123,26 @@
     cursor: pointer;
     font-size: 12px;
     color: #666 ;
+}
+
+
+.search-fix{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: 2px solid #f10214;
+    background-color: white;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0 / 20%);
+    z-index: 100;
+    animation: searchTop 0.5s ease-in-out; 
+}
+@keyframes searchTop {
+    from{
+        top: -50px;
+    }to{
+        top:0px;
+    }
 }
 
 /* 头部结束 */
@@ -286,3 +310,4 @@
     color: red;
 }
  /* 主体结束 */
+
